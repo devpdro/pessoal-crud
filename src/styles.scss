@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PrimeIcons */
+@import 'primeicons/primeicons.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* Painel do dropdown (inclui overlays do PrimeNG) */
+.p-dropdown-panel {
+  border: 1px solid #e6e9ee;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.12);
+}
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  font-size: 11px;
+  line-height: 15px;
+  color: #111827;
+  padding: 0.5rem 0.75rem;
+}
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight,
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item:hover {
+  background-color: #fff7ed;
+  color: #111827;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+input,
+button {
+  font-family: 'Poppins', sans-serif;
+  background: none;
+  border: 0;
+  outline: 0;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  box-shadow: 0 0 0px 1000px white inset;
+  /* opcional, muda a cor do texto */
+}
+
+a {
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul,
+li,
+p {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+/* Overrides PrimeNG de interação e paginator usando Tailwind */
+@layer components {
+  /* Remover foco verde padrão e ajustar ripple para laranja suave */
+  .p-ink {
+    background: #f59e0b !important;
+    opacity: 0.15 !important;
+  }
+  .p-button:focus,
+  .p-inputtext:focus,
+  .p-dropdown:focus,
+  .p-select:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  /* Paginator minimalista */
+  .p-paginator {
+    @apply text-[11px] leading-[15px] text-[#111827];
+  }
+  .p-paginator .p-paginator-pages .p-paginator-page {
+    @apply h-8 min-w-[32px] rounded-[8px] border border-[#E6E9EE];
+  }
+  .p-paginator .p-paginator-next,
+  .p-paginator .p-paginator-prev,
+  .p-paginator .p-paginator-first,
+  .p-paginator .p-paginator-last {
+    @apply w-8 h-8 rounded-[8px] border border-[#E6E9EE];
+  }
+}

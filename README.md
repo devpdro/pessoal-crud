@@ -2,6 +2,30 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
 
+## Tailwind CSS
+
+This project is configured to use Tailwind CSS together with PrimeNG and PrimeUIX themes.
+
+### Setup Summary
+
+- Dev dependencies installed: `tailwindcss`, `postcss`, `autoprefixer`.
+- Config files added: `tailwind.config.js` and `postcss.config.js`.
+- Global stylesheet `src/styles.scss` includes Tailwind layers:
+
+```scss
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### Content Paths
+
+The Tailwind config scans `./src/**/*.{html,ts}`. If you add files elsewhere, update `tailwind.config.js` accordingly.
+
+### PrimeNG Theme
+
+PrimeNG is configured via `providePrimeNG` using the Aura preset from `@primeuix/themes`. Tailwind’s PrimeUI plugin is enabled to ensure proper layering.
+
 ## Development server
 
 To start a local development server, run:
